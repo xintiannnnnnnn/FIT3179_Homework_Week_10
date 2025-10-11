@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internet Users Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <h2>Choropleth Map</h2>
+  <div id="vis"></div>
+
+  <h2>Scatter Plot</h2>
+  <div id="scatter"></div>
+    
+  <script type="text/javascript">
+    // Load the choropleth spec from the local js folder and embed it into #vis
+    // Note: If you open index.html via the file:// protocol the browser may block fetching
+    // local files. Serve the folder with a local web server (see instructions below).
+    fetch('js/visualization.vl.json')
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status} when loading choropleth spec`);
+        return response.json();
+      })
+      .then(mapSpec => {
+        // Embed the choropleth map visualization
+        vegaEmbed('#vis', mapSpec).catch(err => console.error('Vega embed error (map):', err));
+      })
+      .catch(err => console.error('Error loading choropleth spec:', err));
+
+    // Load the scatter plot spec from the local js folder and embed it into #scatter
+    // Note: If you open index.html via the file:// protocol the browser may block fetching
+    // local files. Serve the folder with a local web server (see instructions below).
+    fetch('js/scatter_plot.vl.json')
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status} when loading scatter spec`);
+        return response.json();
+      })
+      .then(scatterSpec => {
+        // Embed the scatter plot spec
+        vegaEmbed('#scatter', scatterSpec).catch(err => console.error('Vega embed error:', err));
+      })
+      .catch(err => console.error('Error loading scatter spec:', err));
+    </script>
+</body>
+</html>
