@@ -137,7 +137,7 @@
         "tooltip": [
           {"field": "Country", "type": "nominal"},
           {"field": "Internet Users", "type": "quantitative", "format": ","},
-          {"field": "GDP per capita", "type": "quantitative", "format": ","},
+          {"field": "Population", "type": "quantitative", "format": ","},
           {"field": "Internet Users per 100", "type": "quantitative", "format": ".2f"}
         ]
       }
