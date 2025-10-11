@@ -4,7 +4,7 @@
   "height": 600,
   "title": "Number of Internet Users per Country (2015)",
   "data": {
-    "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Homework_Week_10/refs/heads/main/data/number_of_internet_users_with_continent.csv"
+    "url": "https://raw.githubusercontent.com/xintiannnnnnnn/FIT3179_Week_10_Homework/refs/heads/main/data/number_of_internet_users_with_continent.csv"
   },
   "params": [
     {
